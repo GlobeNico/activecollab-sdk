@@ -22,6 +22,7 @@
      */
     function get($url) {
       $http = $this->getHandle($url);
+      curl_setopt($http, CURLOPT_HTTPHEADER, array('Connection: close'));
       return $this->execute($http);
     } // get
 
@@ -35,9 +36,10 @@
      */
     function post($url, $post_data = null, $files = null) {
       $http = $this->getHandle($url);
-
+      $headers = array();
+      $headers[] = 'Connection: close';
       if($files) {
-        curl_setopt($http, CURLOPT_HTTPHEADER, array('Content-type: multipart/form-data'));
+      	$headers[] = 'Content-type: multipart/form-data';
 
         $counter = 1;
 
@@ -46,6 +48,7 @@
         } // foreach
       } // if
 
+      curl_setopt($http, CURLOPT_HTTPHEADER, $headers);
       curl_setopt($http, CURLOPT_POST, 1);
       curl_setopt($http, CURLOPT_POSTFIELDS, $post_data);
 
