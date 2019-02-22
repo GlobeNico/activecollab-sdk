@@ -1,5 +1,5 @@
 {
-    "name": "activecollab/activecollab-sdk",
+    "name": "globetechnologie/activecollab-sdk",
     "type": "library",
     "description": "This is a simple PHP library that makes communication with activeCollab API easy",
     "prefer-stable": true,
@@ -10,7 +10,11 @@
         {
             "name": "Ilija Studen",
             "email": "ilija.studen@gmail.com"
-        }
+        },
+        {
+            "name": "Nicolas Morin",
+            "email": "nicolasm@globetechnologie.com"
+        },
     ],
     "require": {
 
