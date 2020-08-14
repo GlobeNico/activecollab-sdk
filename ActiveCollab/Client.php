@@ -182,7 +182,7 @@
       // ---------------------------------------------------
 
       if(empty($post_params)) {
-        $post_params = array();
+        $post_params = null;
       } else {
         if(!isset($post_params['submitted']) || $post_params['submitted'] != 'submitted') {
           $post_params['submitted'] = 'submitted';
